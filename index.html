@@ -1,58 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!--css link-->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
-  <!--js link-->
+
+    <!-- bootstrap format reference -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!--font link-->
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  
+    <!--js link-->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
   
-  <!--jquery library link-->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-  <!--font link-->
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  
-  <!--css stylesheet link-->
-  <link href = "./css/style.css" rel = "stylesheet">
+    <!--jquery library link-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-  <!--javascript link-->
-  <script defer src = "./js/script.js"></script>
-  <title>quizzical Code</title>
+  <!-- css styles -->
+    <link rel="stylesheet" href="./css/style.css">
+
+    <title>quizzical code</title>
+
 </head>
 <body>
 
 
-  <div class = "container">
-    <p> seconds left: <span id = "time-left"> 60 </span></p>
+<div class = "container" >
 
+  <!--timer and highscore-->
+  <header>
+    <button id="highscoreButton">highscores</button>
+    <span id="timer" class = "float-right mr-2">time: 60</span>
+    </header>
 
-    <h1> coding quiz</h1>
-  <p>answer the following questions about coding with javascript in 60 seconds. <br>
-    <strong>note:</strong> for every wrong answer, 10 seconds is subtracted from the total time.</p> <br>
+    <br>
+    <br>
 
-    <div id = "question-container" class = "hide">
-    <div id = "question"> question </div>
-    <div id = "answer-buttons" class = "btn-grid">
-      <button class = "btn"> answer 1 </button>
-      <button class = "btn"> answer 2 </button>
-      <button class = "btn"> answer 3 </button>
-      <button class = "btn"> answer 4 </button>
-      <button class = "btn"> answer 5 </button>
+    <div id = "start" >
+      <h1> coding quiz</h1>
+        <p>answer the following questions about coding with javascript in 60 seconds. <br>
+          <strong>note:</strong> for every wrong answer, 10 seconds is subtracted from the total time.</p> <br>
+        <button id= "start-button" >start</button>  
     </div>
-  </div>
-    <div class = "controls">
-      <button id = "start-btn" class = "start-btn btn">start</button>
-      <button id = "next-btn" class = "next-btn btn hide">next</button>
-    </div>
-  </div>
 
+    <!-- quiz elements -->
+    <div id = "quiz" class="hide">
+
+        <!-- question element -->
+            <h2 id= "question" > question </h2>
+
+        <!-- answer elements -->
+        <div id = "answer-list" >
+
+        </div>
+    </div>
   
-  </div>
+   
+    <div id ="submitScore" class="hide">
+        <h2>your score is <span id="userScore">0</span>.. enter intials below.</h2>
+        <form>
+            <div>
+                <input type="text" id="userInitials"/>
+            </div>
+            <button id="submit">submit highscore</button>
+        </form>
+    </div>
+    <div id="highScore" class = "hide">
+        <div class= "row">
+            <strong class = "col-6">
+                initials
+            </strong>
+            <strong class = "col-6">
+                score
+            </strong>
+
+    </div>
+    
+    
+</div>
+    
+    <footer>
+        <p id= "answer" class ="hide"></p>
+        <div id="highScoreButtons" class="row hide">
+            <div class = "col-6">
+                <button id="restart">restart</button>
+            </div>
+            <div class = "col-6">
+                <button id="clearHigh">clear</button>
+            </div>
+        </div>
+    </footer>
+    
+    
+</div>
+
+
+<!-- javascript coding -->
+<script src="./js/script.js"></script>       
 </body>
 </html>

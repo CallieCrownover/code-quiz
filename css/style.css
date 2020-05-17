@@ -5,15 +5,7 @@
 }
 
 
-:root {
-  --hue-neutral: 200;
-  --hue-wrong: 0;
-  --hue-correct: 145;
-}
-
-
 body {
-  --hue: var(--hue-neutral);
   color: rgb(61, 61, 61);
   padding: 0;
   margin: 0;
@@ -44,8 +36,32 @@ body {
   box-shadow: 0 0 10px 2px;
 }
 
+#highscoreButton {
+  float: left;
+  border: 1px solid #853405;
+  background-color: #c7530f;
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: white;
+}
 
-.btn-grid { 
+#start-button {
+  border: 1px solid #853405;
+  background-color: #c7530f;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 25px;
+  color: white;
+}
+
+
+#answer-list, #btn-grid {
+  border: 1px solid #853405;
+  background-color: #c7530f;
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: white;
+  outline: none;
   display: grid;
   grid-template-columns: repeat(2, auto);
   gap: 10px;
@@ -53,27 +69,8 @@ body {
 }
 
 
-.btn {
-  --hue: var(--hue-neutral);
-  border: 1px solid #853405;
-  background-color: #c7530f;
-  border-radius: 5px;
-  padding: 5px 10px;
-  color: white;
-  outline: none;
-}
-
-
 .btn:hover {
   border-color: black;
-}
-
-
-
-.start-btn, .next-btn {
-  font-size: 1.5rem;
-  font-weight: bold;
-  padding: 10px 20px;
 }
 
 
